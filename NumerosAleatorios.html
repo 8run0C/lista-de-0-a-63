@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0 a 63</title>
+</head>
+<body>
+    <script>
+        /*criar uma lista que coloca números aleatórios de 0 63 sem ter números repitidos*/
+        var lista = []
+
+        while (lista.length < 64){
+            var numero = Math.floor(Math.random() * 64)
+            var pode = true
+            for(var x = 0; x < lista.length; x++){
+                if (numero == lista[x]){
+                    pode = false}}
+            if (pode == true){
+                lista.push(numero)}}
+        console.log(lista)
+        
+        /*depois fazer essa lista ordenar ela de forma crescente*/
+        lista.sort(function(a, b){
+            return a - b})
+        console.log(lista)
+
+        /*fazer uma matrix com essa lista 8x8*/
+        var matrix =[]
+        for (var y = 0; y < 8; y++){
+            var linha = []
+            for (var x = 0 + y * 8; x < 8 + y * 8; x++){
+                linha.push(lista[x])}
+            matrix.push(linha)}
+        console.log(matrix)
+    </script>
+</body>
+</html>
